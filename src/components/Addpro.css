@@ -1,0 +1,19 @@
+input,
+input::placeholder {
+    font-size:1.5/4rem  sans-serif;
+}
+::-webkit-input-placeholder {
+    font-size: 15px;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+       font-size: 15px;
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+       font-size: 15px;
+ }
+ 
+ :-ms-input-placeholder {
+       font-size: 15px;
+ }

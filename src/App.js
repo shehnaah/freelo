@@ -11,7 +11,6 @@ import MyProfile from "./components/MyProfile";
 import MyEnquiry from "./components/MyEnquiry";
 import AddPro from "./components/AddPro";
 import axios from 'axios';
-
 import { UserContextProvider } from './components/UserContext';
 import Auth from './components/Auth';
 import About from './components/About';
@@ -31,6 +30,7 @@ function App() {
         <Route path='/account' element={<ProfilePage/>}/>
         <Route path='/account/myprofile' element={<MyProfile/>}/>
         <Route path='/about' element={<About/>}/>
+        <Route path='/contact' element={<Contact/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/account/myenquiry' element={<MyEnquiry/>}/>
         <Route path='/account/viewpro/addprofile' element={<AddPro/>}/>

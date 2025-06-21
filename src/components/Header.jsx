@@ -24,19 +24,28 @@ const navigate = useNavigate()
     <div>
         <div className="container-fluid nav-bar">
             <div className="container">
-                <nav className="navbar navbar-light navbar-expand-lg py-4">
-                    <Link to={'/'} className="navbar-brand">
-                        <h1 className="text-primary fw-bold mb-0">Free<span className="text-dark">Lo</span> </h1>
-                    </Link>
-                    <button className="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span className="fa fa-bars text-primary"></span>
-                    </button>
+               <nav className="navbar navbar-light navbar-expand-lg py-4">
+  <Link to={'/'} className="navbar-brand">
+    <h1 className="text-primary fw-bold mb-0">Free<span className="text-dark">Lo</span> </h1>
+  </Link>
+
+  <button
+    className="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarCollapse"
+    aria-controls="navbarCollapse"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span className="navbar-toggler-icon"></span>
+  </button>
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <div className="navbar-nav mx-auto">
                             <Link to={'/'} className="nav-item nav-link active">Home</Link>
                             <Link to={'/about'} className="nav-item nav-link">About</Link>
                             {/* <a href="service.html" className="nav-item nav-link">Services</a> */}
-                            <a href="contact.html" className="nav-item nav-link">Contact</a>
+                            <Link to={'/contact'} className="nav-item nav-link">Contact</Link>
                         </div>
                         <input type="text" placeholder="Search" className="me-2 p-4" style={{width: "200px",borderRadius: "20px",height:" 30px",background: "transparent",border: ".2px solid gray"}} onChange={handleInputChange} value={query}/>
                         <button type='submit' className="btn-search btn btn-primary btn-md-square me-4 rounded-circle  d-lg-inline-flex" ><i className="fas fa-search"></i></button>

@@ -63,66 +63,79 @@ function Auth({register}) {
 
 
   return (
-    <div>
-                    <div className="container contact py-6 wow bounceInUp" data-wow-delay="0.1s">
-            <div className="container mt-5" style={{height: "600px"}}>
-                        <div className="row g-4 card shadow border-primary bg-light py-5 px-4 d-flex flex-row justify-content-center align-items-center">
-                           
+<div>
+  <div className="container contact py-5">
+    <div className="container mt-5" style={{ minHeight: "600px" }}>
+      <div className="row card shadow border-primary bg-light py-5 px-3 justify-content-center align-items-center">
 
-                            <div className="col-lg-6  card shadow w-50 ">
-                            <div className="text-center mt-5">
-                            {registerForm ? (
-  <h1 className="display-5 mb-5">SignUp to <span className="text-primary fw-bold mb-0">Free<span className="text-dark">Lo</span> </span></h1>
-) : (
-  <h1 className="display-5 mb-5">SignIn to <span className="text-primary fw-bold mb-0">Free<span className="text-dark">Lo</span> </span></h1>
-)}
-                                    {/* <h1 className="display-5 mb-5">SignUp to <span className="text-primary fw-bold mb-0">Free<span className="text-dark">Lo</span> </span></h1> */}
-                                </div>
-                                <form className="form d-flex flex-column justify-content-center align-items-center" >
-                                {registerForm &&
-                                    <div className="row g-1">
-                                        <div className=" ">
-                                            <input type="text" className="form-control border-primary p-2" style={{width:'450px'}} placeholder="Name"  onChange={e=>setUserData({...userData,name:e.target.value})} value={userData.name}/>
-                                        </div>
-                                        
-                                    </div>}
-                                    <div className=" mt-2 ">
-                                        <input type="email" className="form-control border-primary p-2" placeholder="Email" style={{width:'450px'}}  onChange={e=>setUserData({...userData,email:e.target.value})} value={userData.email}/>
-                                    </div>
-                                    <div className="row g-1 mt-1">
-                                       
-                                        <div  className="">
-                                            <input type="password" className="form-control border-primary p-2" placeholder="Password" style={{width:'450px'}} onChange={e=>setUserData({...userData,password:e.target.value})} value={userData.password}/>
-                                        </div>
-                                    </div>                                    
-
-                                {
-                                        registerForm?
-                                        <div className="col-12 text-center mt-3 mb-5">
-                                            <button onClick={handleRegister}  className="btn btn-primary px-5 py-3 rounded-pill" type='submit' size='lg'> Register </button>
-                                            <p>Already have an account ? <Link style={{textDecoration:'none'}} to={'/login'}>Login Here</Link></p>
-                                        </div>:
-                                        <div className="col-12 text-center mt-3 mb-5">
-                                        <button onClick={handleLogin} className="btn btn-primary px-5 py-3 rounded-pill"  type='submit' size='lg'> Login </button>
-                                        <p>New User ? <Link style={{textDecoration:'none'}} to={'/register'}>Register Here</Link></p>
-                                    </div>
-                                    }
-
-                                </form>
-                            </div>
-                           <div className="col-lg-4" style={{borderRadius: "25px"}}>
-                                    <img src={logimg} alt="" width="300px" height="400px"/>
-                                </div> 
-                                
-
-                        </div>
-                   
-                
+        {/* Form Column */}
+        <div className="col-lg-6 col-md-10 col-sm-12 mb-4">
+          <div className="card shadow p-4">
+            <div className="text-center mb-4">
+              {registerForm ? (
+                <h1 className="display-6">SignUp to <span className="text-primary fw-bold">Free<span className="text-dark">Lo</span></span></h1>
+              ) : (
+                <h1 className="display-6">SignIn to <span className="text-primary fw-bold">Free<span className="text-dark">Lo</span></span></h1>
+              )}
             </div>
+
+            <form className="form">
+              {registerForm && (
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    className="form-control border-primary"
+                    placeholder="Name"
+                    onChange={e => setUserData({ ...userData, name: e.target.value })}
+                    value={userData.name}
+                  />
+                </div>
+              )}
+
+              <div className="mb-3">
+                <input
+                  type="email"
+                  className="form-control border-primary"
+                  placeholder="Email"
+                  onChange={e => setUserData({ ...userData, email: e.target.value })}
+                  value={userData.email}
+                />
+              </div>
+
+              <div className="mb-3">
+                <input
+                  type="password"
+                  className="form-control border-primary"
+                  placeholder="Password"
+                  onChange={e => setUserData({ ...userData, password: e.target.value })}
+                  value={userData.password}
+                />
+              </div>
+
+              {registerForm ? (
+                <div className="text-center">
+                  <button onClick={handleRegister} className="btn btn-primary px-5 py-2 rounded-pill" type="submit">Register</button>
+                  <p className="mt-2">Already have an account? <Link to="/login" className="text-decoration-none">Login Here</Link></p>
+                </div>
+              ) : (
+                <div className="text-center">
+                  <button onClick={handleLogin} className="btn btn-primary px-5 py-2 rounded-pill" type="submit">Login</button>
+                  <p className="mt-2">New User? <Link to="/register" className="text-decoration-none">Register Here</Link></p>
+                </div>
+              )}
+            </form>
+          </div>
         </div>
 
+        {/* Image Column */}
+        <div className="col-lg-4 col-md-8 col-sm-10 text-center">
+          <img src={logimg} alt="login visual" className="img-fluid rounded" style={{ maxHeight: "400px" }} />
+        </div>
 
+      </div>
     </div>
+  </div>
+</div>
   )
 }
 

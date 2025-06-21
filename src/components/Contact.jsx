@@ -20,33 +20,37 @@ function Contact() {
                                 <button class="w-100 btn btn-primary form-control p-3 border-primary bg-primary rounded-pill" type="submit">Submit Now</button>
                             </form>
                         </div>
-                        <div class="col-md-6 col-lg-5">
-                            <div>
-                                <div class="d-inline-flex w-100 border border-primary p-4 rounded mb-4">
-                                    <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
-                                    <div class="">
-                                        <h4>Address</h4>
-                                        <p>123 Street, New York, USA</p>
-                                    </div>
-                                </div>
-                                <div class="d-inline-flex w-100 border border-primary p-4 rounded mb-4">
-                                    <i class="fas fa-envelope fa-2x text-primary me-4"></i>
-                                    <div class="">
-                                        <h4>Mail Us</h4>
-                                        <p class="mb-2">info@example.com</p>
-                                        <p class="mb-0">support@example.com</p>
-                                    </div>
-                                </div>
-                                <div class="d-inline-flex w-100 border border-primary p-4 rounded">
-                                    <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
-                                    <div class="">
-                                        <h4>Telephone</h4>
-                                        <p class="mb-2">(+012) 3456 7890 123</p>
-                                        <p class="mb-0">(+704) 5555 0127 296</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<div class="row justify-content-center px-3">
+  <div class="col-12 col-md-10 col-lg-5">
+    
+    <div class="d-flex w-100 border border-primary p-4 rounded mb-4 align-items-start">
+      <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
+      <div>
+        <h5 class="mb-1">Address</h5>
+        <p class="mb-0">123 Street, New York, USA</p>
+      </div>
+    </div>
+
+    <div class="d-flex w-100 border border-primary p-4 rounded mb-4 align-items-start">
+      <i class="fas fa-envelope fa-2x text-primary me-4"></i>
+      <div>
+        <h5 class="mb-1">Mail Us</h5>
+        <p class="mb-1">info@example.com</p>
+        <p class="mb-0">support@example.com</p>
+      </div>
+    </div>
+
+    <div class="d-flex w-100 border border-primary p-4 rounded align-items-start">
+      <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
+      <div>
+        <h5 class="mb-1">Telephone</h5>
+        <p class="mb-1">(+012) 3456 7890 123</p>
+        <p class="mb-0">(+704) 5555 0127 296</p>
+      </div>
+    </div>
+
+  </div>
+</div>
                     </div>
                 </div>
                 

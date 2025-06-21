@@ -33,31 +33,40 @@ function Auth({register}) {
 
     }
 
-    const handleLogin=async(e)=>{
-        e.preventDefault()
-        const {email,password}=userData
-        if(!email||!password){
-            alert('Please fill the form completely')
-        }else{
-            // api call
-            const res =await loginApi({email,password})
-            console.log(res);
-            if(res.status===200){
-                // save res
-                localStorage.setItem("existingUser",JSON.stringify(res.data.existingUser))
-                localStorage.setItem("Role",res.data.role)
-                sessionStorage.setItem("token",res.data.token)
-                // reset state
-                setUserData({
-                    email:"",password:""
-                })
-                navigate('/')
-            }else{
-                alert(res.response.data)
-            }
-        }
+const handleLogin = async (e) => {
+  e.preventDefault();
+  const { email, password } = userData;
 
+  if (!email || !password) {
+    alert("Please fill the form completely");
+    return;
+  }
+
+  try {
+    const res = await loginApi({ email, password });
+    console.log(res);
+
+    if (res.status === 200) {
+      // Save response data
+      localStorage.setItem("existingUser", JSON.stringify(res.data.existingUser));
+      localStorage.setItem("Role", res.data.role);
+      sessionStorage.setItem("token", res.data.token);
+
+      // Reset form
+      setUserData({ email: "", password: "" });
+
+      // Redirect
+      navigate("/");
     }
+  } catch (err) {
+    console.error("Login failed:", err);
+    if (err.response && err.response.data) {
+      alert(err.response.data); // from server
+    } else {
+      alert("An unexpected error occurred.");
+    }
+  }
+};
     
     console.log(userData);
 
